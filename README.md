@@ -1,4 +1,4 @@
-# ETL Weather Insights Pipeline
+# ETL Weather Airflow Pipeline
 
 ## Overview
 
@@ -45,5 +45,24 @@ Follow these steps to set up and run the project locally:
 - Install [Docker](https://www.docker.com/get-started) and [Docker Compose](https://docs.docker.com/compose/).
 - Clone the repository:
   ```bash
-  git clone https://github.com/anshuprojects/<repository-name>.git
-  cd <repository-name>
+  git clone https://github.com/anshuprojects/airflow_implementation_e2e.git
+  cd airflow_implementation_e2e
+
+- Install Astronomer
+
+## Run the Pipeline
+- Start the Docker Environment:
+  ```bash
+  docker-compose up -d
+
+- Access the Airflow Web Server:
+  URL: http://localhost:8080
+  Default credentials: admin / admin.
+
+- Trigger the DAG:
+   Log in to Airflow, navigate to the DAGs tab, and trigger the ETL pipeline DAG.
+
+- Query the Data:
+   Access PostgreSQL to verify and analyze the stored data:
+   ```bash
+   docker exec -it <postgres-container-name> psql -U postgres -d postgres
