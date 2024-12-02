@@ -1,0 +1,16 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:12.6
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Priya123
+      POSTGRES_DB: postgres
+    ports:
+      - "5434:5433"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
